@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./trainings.component.css']
 })
 export class TrainingsComponent implements OnInit {
-  listTrainings : Training[] | undefined;
+  listTrainings : Training[] | undefined;  
   constructor(private cartService : CartService, private router : Router) {
    }
 
-  ngOnInit(): void {
+  ngOnInit(): void {        
     this.listTrainings = [ 
       {id:1,name:'Java',description:'Formation Java SE 8 sur 5 jours',price:1500,quantity:1 },
       {id:2,name:'DotNet',description:'Formation DotNet 3 jours',price:1000,quantity:1 },

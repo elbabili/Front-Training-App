@@ -9,7 +9,7 @@ export class CartService {
   private cart : Map<number,Training>;
 
   constructor() {     
-    // au démarrage du service, je récupère le contenu du local storage : command en cours
+    // au démarrage du service, je récupère le contenu du local storage : commande en cours
     let cart = localStorage.getItem('cart');
     if(cart){  // le panier existe déjà
       this.cart = new Map(JSON.parse(cart));
@@ -35,8 +35,10 @@ export class CartService {
     this.saveCart();
   }
 
-  getCart() {
+  getCart() : Training [] | undefined {    
+    if(this.cart.size > 0)
     return Array.from(this.cart.values());
+    else return undefined;
   }
 
   getAmount() : number {
@@ -53,8 +55,8 @@ export class CartService {
     return new Customer("unknown","","","","");
   }
 
-  clear() {
+  clearLocalStorage() {
     this.cart.clear();
-    localStorage.clear();
+    localStorage.setItem('cart','');    
   }
 }

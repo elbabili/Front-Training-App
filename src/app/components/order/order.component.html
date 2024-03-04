@@ -5,11 +5,11 @@
     <div class="row">
       <div class="col-md-6">   
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Nom du Client : {{cartService.getCustomer().name}} </li>
-          <li class="list-group-item">Prénom du Client : {{cartService.getCustomer().firstName}}</li>
-          <li class="list-group-item">Adresse Client : {{cartService.getCustomer().address}}</li>
-          <li class="list-group-item">Tel Client : {{cartService.getCustomer().phone}}</li>
-          <li class="list-group-item">Email : {{cartService.getCustomer().email}}</li>
+          <li class="list-group-item">Nom du Client : {{customer?.name}} </li>
+          <li class="list-group-item">Prénom du Client : {{customer?.firstName}}</li>
+          <li class="list-group-item">Adresse Client : {{customer?.address}}</li>
+          <li class="list-group-item">Tel Client : {{customer?.phone}}</li>
+          <li class="list-group-item">Email : {{customer?.email}}</li>
         </ul>     
       </div>
     
