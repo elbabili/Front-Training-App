@@ -8,6 +8,10 @@ import { Router } from '@angular/router';
   templateUrl: './trainings.component.html',
   styleUrls: ['./trainings.component.css']
 })
+
+/**
+ * Composant de gestion des formations permettant l'affichage et l'ajout dans le panier de formation
+ */
 export class TrainingsComponent implements OnInit {
   listTrainings : Training[] | undefined;  
   constructor(private cartService : CartService, private router : Router) {
@@ -21,6 +25,10 @@ export class TrainingsComponent implements OnInit {
     ];
   }
 
+  /**
+   * Méthode permettant l'ajout d'une formation au panier en utilisant le service dédié
+   * @param training 
+   */
   onAddToCart(training:Training){
     if(training.quantity > 0) {
      this.cartService.addTraining(training);

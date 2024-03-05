@@ -8,6 +8,10 @@ import { CartService } from 'src/app/services/cart.service';
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.css']
 })
+
+/**
+ * Composant de gestion du récapitulatif d'une commande + validation
+ */
 export class OrderComponent implements OnInit {
   dateOrder : Date = new Date();
   customer : Customer | undefined;
@@ -17,6 +21,10 @@ export class OrderComponent implements OnInit {
     this.customer = this.cartService.getCustomer();
   }
 
+  /**
+   * Méthode appelé en cas de validation d'une commande
+   * si user confirme alors l'appli est remise dans son état initial
+   */
   onOrder(){
     if(confirm("Aujourd'hui c'est gratuit, merci de votre visite :)")){
         this.cartService.clearLocalStorage();
