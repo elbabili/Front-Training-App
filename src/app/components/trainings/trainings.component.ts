@@ -30,7 +30,7 @@ export class TrainingsComponent implements OnInit {
    * @param training 
    */
   onAddToCart(training:Training){
-    if(training.quantity > 0) {
+    if(training.quantity > 0 && training.quantity <=10) {
      this.cartService.addTraining(training);
      this.router.navigateByUrl('cart');
     }
