@@ -14,10 +14,12 @@ import { CartService } from 'src/app/services/cart.service';
  * le tout pouvant être modifié à l'aide d'un formulaire
  */
 export class CustomerComponent implements OnInit {  
+  customer : Customer | undefined;
   constructor(public cartService : CartService, private router : Router) {  
   }
 
   ngOnInit(): void {
+    this.customer = this.cartService.getCustomer();    
   }
 
   /**

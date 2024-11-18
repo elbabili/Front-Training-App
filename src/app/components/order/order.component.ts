@@ -27,6 +27,7 @@ export class OrderComponent implements OnInit {
    */
   onOrder(){
     if(confirm("Aujourd'hui c'est gratuit, merci de votre visite :)")){
+        this.cartService.sendOrderToLocaleStorage();
         this.cartService.clearLocalStorage();
         this.router.navigateByUrl('');
     }

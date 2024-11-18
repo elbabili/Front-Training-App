@@ -24,7 +24,7 @@ export class CartService {
 
   /**
    * Méthode qui ajoute une formation au panier puis ajoute le panier au local storage
-   * @param training 
+   * @param training formation à ajouter
    */
   addTraining(training: Training) { 
     this.cart.set(training.id,training);
@@ -93,5 +93,13 @@ export class CartService {
   clearLocalStorage() {
     this.cart.clear();
     localStorage.setItem('cart','');    
+  }
+
+  /**
+   * Méthode qui injecte la commande en locale storage
+   */
+  sendOrderToLocaleStorage() {
+    let order = { customer : this.getCustomer(), cart : this.getCart(), total : this.getAmount()};
+    localStorage.setItem('order',JSON.stringify(order));    
   }
 }
